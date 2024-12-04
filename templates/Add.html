@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/add.css">
+    <title>Add Car Data</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: #fff;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .navbar .home-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .navbar .home-btn:hover {
+            background-color: #45a049;
+        }
+
+        .navbar .title {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            flex: 1;
+            margin: 0;
+        }
+
+        /* Form container */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #f8f9fa;
+            color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            background: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/" class="home-btn">Home</a>
+        <p class="title">Add the CAR DATA</p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="container">
+        <h1>Add Car Data</h1>
+        <form method="POST">
+            <!-- City -->
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter city name" required>
+            </div>
+            <!-- Car Name -->
+            <div class="form-group">
+                <label for="carname">Car Name</label>
+                <input type="text" id="carname" name="carname" placeholder="Enter car name" required>
+            </div>
+            <!-- Car Price -->
+            <div class="form-group">
+                <label for="carprice">Car Price</label>
+                <input type="number" id="carprice" name="carprice" placeholder="Enter car price" required>
+            </div>
+            <!-- Company -->
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Enter company name" required>
+            </div>
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" href='/'>Submit</button>
+            </div>
+            <div class="footer">
+                <p>&copy; Created By Rohit Sudhakar Jawalgaonkar</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
